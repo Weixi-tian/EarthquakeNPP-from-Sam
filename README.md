@@ -141,6 +141,15 @@ To setup,
   cd Experiments/neural_stpp/
   python setup.py build_ext --inplace
   ```
+Before running experiments, create_dataset,
+  ```bash
+  python create_dataset config/[config].yaml
+  ```
+where `[config]` is one of ComCat_25_nstpp|ETAS_25_nstpp|ETAS_incomplete_25_nstpp|SaltonSea_10_nstpp|SanJac_10_nstpp|SCEDC_20_nstpp|SCEDC_25_nstpp|SCEDC_30_nstpp|WHITE_06_nstpp|Japan_nstpp
+
+You can see the output attached:
+<img width="1587" height="150" alt="1a14e3f7-8b09-4f38-b8a6-fe8cf5eb06e1" src="https://github.com/user-attachments/assets/dac77015-41b6-45e2-92e1-e3bb8a2af321" />
+where Biggest time intervalcontaining 3 events is the t1 you should input to function: get_t0_t1() in the train_stpp.py and function load_data() in the viz_dataset.py; the log_det_inv is computed for NSTPP's standalization of the spatial region, you need to substract this value from the final spatial log-likelihood score. 
 
 For all experiments run,
 
